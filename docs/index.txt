@@ -13,6 +13,6 @@ an ever-growing cluster. While some of the specific tasks in this project are
 site-specific, many of the techniques and, hopefully, much of the code may be
 successfully reused elsewhere.
 
-.. _Fabric:    					http://fabfile.org/
-.. _High Energy Physics:		http://hep.wisc.edu/
-.. _University of Wisconsin:	http://www.wisc.edu/
+.. _Fabric:                     http://fabfile.org/
+.. _High Energy Physics:        http://hep.wisc.edu/
+.. _University of Wisconsin:    http://www.wisc.edu/
