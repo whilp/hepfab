@@ -17,6 +17,20 @@ successfully reused elsewhere.
 .. _High Energy Physics:        http://hep.wisc.edu/
 .. _University of Wisconsin:    http://www.wisc.edu/
 
+Basic Usage
++++++++++++
+
+Commands are defined in :module:`hepfab.commands`. To see the available
+commands, use the :option:`--list` option::
+    
+    $ fab --list
+
+Commands can be run on individual hosts, lists of hosts or groups of hosts
+identified by a role. You can select the hosts you wish to run on via the
+command line; see Fabric's usage message and :ref:`roles` for more information.
+
+.. _roles:
+
 Roles
 +++++
 
