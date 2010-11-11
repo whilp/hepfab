@@ -1,6 +1,16 @@
+import logging
 import math
 
-__all__ = ["digits", "genrange"]
+__all__ = ["NullHandler", "digits", "genrange"]
+
+try:
+    NullHandler = logging.NullHandler
+except AttributeError:
+    class NullHandler(logging.Handler):
+        def emit(self, record):
+            pass
+
+logging.getLogger("hepfab.util").addHandler(NullHandler())
 
 def digits(n, base=10):
     """Return the number of digits in *n*."""
