@@ -1,11 +1,15 @@
 import random
+import socket
 
 from functools import partial
 
 from fabric.api import env
 from fabric import api as fab
 
-__all__ = ["kick", "restart", "service", "start", "status", "stop"]
+__all__ = [
+    "kick", "restart", "service", "start", "status", "stop",
+    "cfrmkey",
+]
 
 def service(servicename, command):
     """Run a System V init script."""
@@ -33,3 +37,10 @@ def kick(command="/bin/true", maxsleep=3600):
         """ "/bin/sleep %(seconds)d && %(cmd)s && /sbin/shutdown -r now" """
         """ < /dev/null > /dev/null 2>&1 &"""
         ) % env)
+
+@fab.roles("cfengine")
+def cfrmkey(*hostnames):
+    """Remove a Cfengine host key."""
+    for hostname in hostnames:
+        env.addr = socket.gethostbyname(hostname)
+        fab.sudo("rm -f /var/cfengine/ppkeys/root-%(addr)s.pub" % env)
