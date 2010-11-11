@@ -37,14 +37,17 @@ servers = dict(
     cfengine = ["ginseng", "anise"],
 )
 
+groups = dict(
+    computenodes = computenodes,
+    storagenodes = storagenodes,
+    servers = servers,
+)
+
 env.roledefs.update(dict(
-    computenodes =  chain(*computenodes.values()),
-    storagenodes =  chain(*storagenodes.values()),
     nodes =         chain(*(storagenodes.values() + computenodes.values())),
-    servers =       chain(*servers.values()),
 ))
 
-for group in (computenodes, storagenodes, servers):
-    env.roledefs.update(group)
+for name, group in groups.items():
+    env.roledefs[name] = chain(*group.values())
 
 del(chain, genrange)
