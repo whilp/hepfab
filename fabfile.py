@@ -55,6 +55,7 @@ servers = dict(
     web = ["web"],
     mail = ["mail"],
     cfengine = ["ginseng", "anise"],
+    login = ["login01", "login02", "login03", "login04"],
 )
 
 groups = dict(
