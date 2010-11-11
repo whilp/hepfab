@@ -36,7 +36,7 @@ servers = dict(
 )
 
 fab.env.roledefs = dict(
-    computenodes =  list(chain(computenodes.values())),
+    computenodes =  chain(computenodes.values()),
     storagenodes =  chain(storagenodes.values()),
     nodes =         chain(storagenodes.values() + computenodes.values()),
     servers =       chain(servers.values()),
