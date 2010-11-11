@@ -1,5 +1,7 @@
 import math
 
+__all__ = ["digits", "genrange"]
+
 def digits(n, base=10):
     """Return the number of digits in *n*."""
     if n == 0:
