@@ -7,6 +7,26 @@ from hepfab.util import genrange
 from hepfab.commands import *
 
 env.shell = "/bin/sh -c"
+env.path_behavior = "replace"
+env.path = ':'.join("""
+/afs/hep.wisc.edu/admin/bin
+/usr/local/etc
+/afs/hep.wisc.edu/cms/sw/python/bin
+/afs/hep.wisc.edu/cms/sw/python/2.6/bin
+/afs/hep.wisc.edu/cms/cmsprod/dcache/bin
+/condor/sbin
+/condor/bin
+/usr/kerberos/sbin
+/usr/kerberos/bin
+/bin
+/sbin
+/usr/bin
+/usr/sbin
+/usr/X11R6/bin
+/usr/local/bin
+/usr/local/sbin
+/usr/games
+""".split())
 
 # Compute nodes.
 computenodes = dict(
