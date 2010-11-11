@@ -28,3 +28,10 @@ command will run :command:`w` on all of the hosts in the 'servers' role.
     $ fab -R servers -- w
 
 To add new roles, update the :data:`fab.env.roledefs` dictionary.
+
+API
++++
+
+.. automodule:: hepfab.util
+    :members:
+    :show-inheritance:
