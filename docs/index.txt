@@ -3,18 +3,16 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to hep-fab's documentation!
-===================================
+hep-fab: Fabric for UW-HEP
+==========================
 
-Contents:
+hep-fab captures common system administration tasks performed by the `High Energy
+Physics`_ group at the `University of Wisconsin`_ in a `Fabric`_ fabfile. By
+automating these typically manual tasks, this project makes it easier to manage
+an ever-growing cluster. While some of the specific tasks in this project are
+site-specific, many of the techniques and, hopefully, much of the code may be
+successfully reused elsewhere.
 
-.. toctree::
-   :maxdepth: 2
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
+.. _Fabric:    					http://fabfile.org/
+.. _High Energy Physics:		http://hep.wisc.edu/
+.. _University of Wisconsin:	http://www.wisc.edu/
