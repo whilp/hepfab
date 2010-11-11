@@ -1,11 +1,12 @@
 from itertools import chain
 
+from fabric.api import env
 from fabric import api as fab
 
 from hepfab.util import genrange
 from hepfab.commands import *
 
-fab.env.shell = "/bin/sh -c"
+env.shell = "/bin/sh -c"
 
 # Compute nodes.
 computenodes = dict(
@@ -33,9 +34,10 @@ servers = dict(
     afs = ["anise", "rosemary"],
     web = ["web"],
     mail = ["mail"],
+    cfengine = ["ginseng", "anise"],
 )
 
-fab.env.roledefs.update(dict(
+env.roledefs.update(dict(
     computenodes =  chain(*computenodes.values()),
     storagenodes =  chain(*storagenodes.values()),
     nodes =         chain(*(storagenodes.values() + computenodes.values())),
@@ -43,6 +45,6 @@ fab.env.roledefs.update(dict(
 ))
 
 for group in (computenodes, storagenodes, servers):
-    fab.env.roledefs.update(group)
+    env.roledefs.update(group)
 
 del(chain, genrange)
