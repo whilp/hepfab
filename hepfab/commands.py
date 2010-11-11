@@ -5,7 +5,7 @@ from functools import partial
 from fabric.api import env
 from fabric import api as fab
 
-__all__ = ["kick", "restart", "service", "start", "stop"]
+__all__ = ["kick", "restart", "service", "start", "status", "stop"]
 
 def service(servicename, command):
     """Run a System V init script."""
@@ -18,6 +18,9 @@ restart.__doc__ = """Restart a service."""
 
 start = partial(service, command="start")
 start.__doc__ = """Start a service."""
+
+status = partial(service, command="status")
+status.__doc__ = """Check a service's status."""
 
 stop = partial(service, command="stop")
 stop.__doc__ = """Stop a service."""
