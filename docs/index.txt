@@ -16,3 +16,15 @@ successfully reused elsewhere.
 .. _Fabric:                     http://fabfile.org/
 .. _High Energy Physics:        http://hep.wisc.edu/
 .. _University of Wisconsin:    http://www.wisc.edu/
+
+Roles
++++++
+
+Fabric commands can be targeted to groups of hosts, called *roles*. The fabfile defines
+a number of roles using the :func:`hepfab.util.genrange` convenience function.
+To use one of the defined roles, specify it on the command line. The following
+command will run :command:`w` on all of the hosts in the 'servers' role.
+    
+    $ fab -R servers -- w
+
+To add new roles, update the :data:`fab.env.roledefs` dictionary.
