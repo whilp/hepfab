@@ -31,6 +31,17 @@ Commands can be run on individual hosts, lists of hosts or groups of hosts
 identified by a role. You can select the hosts you wish to run on via the
 command line; see Fabric's usage message and :ref:`roles` for more information.
 
+Tips
+++++
+
+ * If your local account differs from your remote account, set the *user*
+ variable in :file:`~/.fabricrc`.
+ * Authentication will be easier if you add an SSH key to
+ :file:`~/.ssh/authorized_keys` on the remote side and store the credential in
+ an `SSH agent locally`_.
+
+.. SSH agent locally:   http://mah.everybody.org/docs/ssh
+
 .. _roles:
 
 Roles
