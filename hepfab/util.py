@@ -10,7 +10,7 @@ def digits(n, base=10):
         digits = math.log(n, base)
     else:
         digits = math.log10(n)
-    return digits + 1
+    return int(digits) + 1
 
 def genrange(gen, *args):
     start, stop, step = None, None, None
