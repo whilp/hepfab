@@ -35,12 +35,12 @@ servers = dict(
     mail = ["mail"],
 )
 
-fab.env.roledefs = dict(
+fab.env.roledefs.update(dict(
     computenodes =  chain(computenodes.values()),
     storagenodes =  chain(storagenodes.values()),
     nodes =         chain(storagenodes.values() + computenodes.values()),
     servers =       chain(servers.values()),
-)
+))
 
 for group in (computenodes, storagenodes, servers):
     fab.env.roledefs.update(group)
