@@ -17,6 +17,8 @@ successfully reused elsewhere.
 .. _High Energy Physics:        http://hep.wisc.edu/
 .. _University of Wisconsin:    http://www.wisc.edu/
 
+.. _usage:
+
 Basic Usage
 +++++++++++
 
@@ -42,6 +44,8 @@ command will run :command:`w` on all of the hosts in the 'servers' role.
     $ fab -R servers -- w
 
 To add new roles, update the :data:`fab.env.roledefs` dictionary.
+
+.. _api:
 
 API
 +++
