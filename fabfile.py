@@ -44,3 +44,5 @@ fab.env.roledefs.update(dict(
 
 for group in (computenodes, storagenodes, servers):
     fab.env.roledefs.update(group)
+
+del(chain, genrange)
